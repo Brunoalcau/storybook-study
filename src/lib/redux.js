@@ -1,5 +1,4 @@
 import { createStore } from 'redux';
-import Task from '../components/Task';
 
 export const actions = {
     ARCHIVE_TASK: 'ARCHIVE_TASK',

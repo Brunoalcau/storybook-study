@@ -6,28 +6,7 @@ import { connect } from 'react-redux';
 import Task from '../Task';
 import { archiveTask, pinTask } from '../../lib/redux';
 
-
-
-export function PureTaskList(props) {
-    return <TaskList {...props} />
-}
-
-PureTaskList.defaultProps = {
-    loading: false,
-};
-
-PureTaskList.propTypes = {
-    /** Checks if it's in loading state */
-    loading: PropTypes.bool,
-    /** The list of task */
-    tasks: PropTypes.arrayOf(Task.propTypes.tasks).isRequired,
-    /** Event to change the task to archived */
-    onPinTask: PropTypes.func,
-    /** Event to change the task to archived */
-    onArchiveTask: PropTypes.func,
-}
-
-const TaskList = ({ loading, tasks, onPinTask, onArchiveTask }) => {
+export const PureTaskList = ({ loading, tasks, onPinTask, onArchiveTask }) => {
     const events = {
         onPinTask,
         onArchiveTask
@@ -67,21 +46,20 @@ const TaskList = ({ loading, tasks, onPinTask, onArchiveTask }) => {
             ))}
         </div>
     )
-    // return null;
 }
 
-TaskList.propTypes = {
+PureTaskList.propTypes = {
     /** Checks if it's in loading state */
     loading: PropTypes.bool,
     /** The list of task */
-    tasks: PropTypes.arrayOf(Task.propTypes.tasks).isRequired,
+    tasks: PropTypes.arrayOf(Task.propTypes.task),
     /** Event to change the task to archived */
     onPinTask: PropTypes.func,
     /** Event to change the task to archived */
     onArchiveTask: PropTypes.func,
 };
 
-TaskList.defaultProps = {
+PureTaskList.defaultProps = {
     loading: false
 };
 
