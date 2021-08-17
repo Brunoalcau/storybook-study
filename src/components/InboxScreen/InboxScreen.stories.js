@@ -15,12 +15,9 @@ const store = {
     dispatch: action('dispatch')
 }
 
-
-const addRedux = story => <Provider store={store}>{story()}</Provider>
-
 export default {
     component: PureInboxScreen,
-    decorators: [addRedux],
+    decorators: [story => <Provider store={store}>{story()}</Provider>],
     title: 'InboxScreen'
 };
 
