@@ -30,17 +30,17 @@ const Task = ({ task: { id, title, state }, onArchiveTask, onPinTask }) => {
 export default Task;
 
 Task.propTypes = {
-  /** Composition of the task **/
+  /** Composition of the task */
   task: PropTypes.shape({
-    /** Id of the task **/
+    /** Id of the task */
     id: PropTypes.string.isRequired,
-    /** titulo da task **/
+    /** titulo da task */
     title: PropTypes.string.isRequired,
-    /** Current state of the task **/
+    /** Current state of the task */
     state: PropTypes.string.isRequired,
   }),
-  /** Event to change the task to archived **/
+  /** Event to change the task to archived */
   onArchiveTask: PropTypes.func,
-  /** event to change the task to pinned**/
+  /** event to change the task to pinned */
   onPingTask: PropTypes.func,
 };
